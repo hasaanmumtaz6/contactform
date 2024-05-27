@@ -8,19 +8,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Set up Nodemailer transporter
     const transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 587,
-        secure: false,
+        host: "smtp.privateemail.com",
+        port: 465,
+        secure: true,
         auth: {
-          user: "hasaanmumtaz6@gmail.com",
-          pass: "wquw dgmc obju skfx",
+          user: "contactus@startupmaxim.com",
+          pass: "Contactus-startupmaxim",
         },
       });
 
     try {
       await transporter.sendMail({
         from: email,
-        to: "hasaanad12min@gmail.com",
+        to: "contactus@startupmaxim.com",
         subject: `New contact form submission from ${name}`,
         text: message,
         html: `<p>You have a new contact form submission</p><br>
